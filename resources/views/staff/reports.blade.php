@@ -77,6 +77,12 @@
 		
 		<div id="datacontent" class="row well">
 			<div class="col-md-12 row">
+				<h3 class="text-center">Report List</h3>
+				<p class="pull-left">
+					<button id="printReport">
+						<span class="glyphicon glyphicon-print"></span>
+					</button>
+				</p>
 				<table class="table table-bordered row">
 					<thead>
 						<tr>
@@ -109,5 +115,11 @@
 
 
 @section('scripts')
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#printReport").click(function(){
+			window.print();
+		});
+	});
+</script>
 @endsection

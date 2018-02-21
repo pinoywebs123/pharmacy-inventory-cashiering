@@ -96,10 +96,10 @@
 				<table class="table table-bordered row">
 					<thead>
 						<tr>
-							
+							<td>Supplier Name</td>
 							<td>Name</td>
 							<td>Quantity Received</td>
-							
+							<td>Brands</td>
 							<td>Price</td>
 							<td>Date Delivered</td>
 						</tr>
@@ -108,10 +108,10 @@
 					<tbody>
 						@foreach($items as $morls)
 							<tr>
-								
+								<td>{{$morls->supplier}}</td>
 								<td>{{$morls->name}}</td>
 								<td>{{$morls->quantity}}</td>
-								
+								<td>{{$morls->brand}}</td>
 								<td>{{$morls->price}}</td>
 								<td>{{$morls->created_at->toDayDateTimeString()}}</td>
 							</tr>

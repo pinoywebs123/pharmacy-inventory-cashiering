@@ -81,7 +81,7 @@
 					</div>
 					<div class="panel-body">
 						<p class="text-center">
-							<span class="badge">2</span>
+							<span class="badge">{{$invent}}</span>
 						</p>
 					</div>
 				</div>
@@ -93,24 +93,13 @@
 					</div>
 					<div class="panel-body">
 						<p class="text-center">
-							<span class="badge">2</span>
+							<span class="badge">{{$invent}}</span>
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<a href="#"><h3 class="text-center">Users</h3></a>
-					</div>
-					<div class="panel-body">
-						<p class="text-center">
-							<span class="badge">2</span>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
+			
+			<div class="col-md-12">
 				<div class="panel panel-warning">
 					<div class="panel-heading">
 						<a href="{{route('staff_reports')}}"><h3 class="text-center">Reports</h3></a>

@@ -112,8 +112,24 @@
 			</div>	
 
 			<div class="col-md-4">
-				<h2 class="text-center">Total Payment</h2>
-				<h2 class="text-center">P{{$total}}</h2>
+				<div class="row">
+					<div class="col-md-6">
+						<h4 class="text-center">Total Payment</h4>
+						<input type="text" id="total" name="total" value="{{$total}}" class="form-control" disabled="">
+					</div>
+					<div class="col-md-6">
+						<h4 class="text-center">Change</h4>
+						<input type="text" id="totalChange" value="0" class="form-control" disabled="">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label>Enter Payment</label>
+					<input type="text" name="payment" class="form-control" value="0" required="" id="payment">
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-default btn-block" id="btnCalculate">CALCULATE</button>
+				</div>
 			</div>		
 		</div>
 	</div>
@@ -121,5 +137,16 @@
 
 
 @section('scripts')
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btnCalculate").click(function(){
+			var payment = parseFloat($("#payment").val());
+			var total = parseFloat($("#total").val());
+			var change = payment - total;
+			
+			$("#totalChange").val(change);
 
+		});
+	});
+</script>
 @endsection

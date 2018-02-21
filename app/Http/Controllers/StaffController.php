@@ -18,7 +18,8 @@ class StaffController extends Controller
 
     public function staff_home(){
         $reports = Report::orderBy('id','desc')->paginate(10);
-        return view('staff.home', compact('reports'));
+        $invent = Inventory::count();
+        return view('staff.home', compact('reports','invent'));
     }
     public function staff_main(){
          $items = Item::where('category_id', 1)->get();
@@ -139,6 +140,8 @@ class StaffController extends Controller
         $inventory->name =  $request['product_name'];
         $inventory->quantity = $request['product_quantity'];
         $inventory->price = $request['product_price'];
+        $inventory->brand = $request['brand'];
+        $inventory->supplier = $request['supplier_name'];
         $inventory->save();
 
         $item = new Item;
@@ -146,6 +149,8 @@ class StaffController extends Controller
         $item->name =  $request['product_name'];
         $item->quantity = $request['product_quantity'];
         $item->price = $request['product_price'];
+        $item->brand = $request['brand'];
+        $item->supplier = $request['supplier_name'];
         $item->save();
 
         return redirect()->back()->with('add_ok', 'You have added new item successfully!');

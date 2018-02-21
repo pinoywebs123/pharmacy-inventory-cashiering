@@ -103,6 +103,14 @@
 						</select>
 					</div>
 					<div class="form-group">
+						<label>Supplier Name</label>
+						<input type="text" name="supplier_name" class="form-control" required="">
+					</div>
+					<div class="form-group">
+						<label>Brand</label>
+						<input type="text" name="brand" class="form-control" required="">
+					</div>
+					<div class="form-group">
 						<label>Product Name</label>
 						<input type="text" name="product_name" class="form-control" maxlength="50" required="">
 					</div>
