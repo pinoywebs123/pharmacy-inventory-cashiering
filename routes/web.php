@@ -104,4 +104,9 @@ Route::group(['prefix'=> 'Personnel'], function(){
 		'as'=> 'staff_new_product',
 		'uses'=> 'StaffController@staff_new_product'
 	]);
+
+	Route::get('/Report-Inventory', [
+		'as'=> 'staff_inventory_report',
+		'uses'=> 'StaffController@staff_inventory_report'
+	]);
 });

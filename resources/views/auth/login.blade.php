@@ -97,7 +97,7 @@
 				@endif
 			</div>
 			<div class="form-group">
-				<a href="" id="signin" class="btn btn-danger">Sign-Up</a>
+				
 				 
 				 {{csrf_field()}}
 				 <button type="submit" id="signin" class="btn btn-danger">Sign-In</button>

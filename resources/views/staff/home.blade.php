@@ -33,6 +33,10 @@
 	.dropdown-menu>li>a{
 		color: #e74c3c !important;
 	}
+	i{
+		margin-top: -40px;
+		font-size: 40px;
+	}
 </style>
 @endsection
 
@@ -78,6 +82,7 @@
 				<div class="panel panel-danger">
 					<div class="panel-heading">
 						<a href="{{route('staff_main')}}"><h3 class="text-center">Inventory</h3></a>
+						<i class="glyphicon glyphicon-list pull-left"></i>
 					</div>
 					<div class="panel-body">
 						<p class="text-center">
@@ -90,6 +95,7 @@
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<a href="{{route('staff_items')}}"><h3 class="text-center">Products</h3></a>
+						<i class="glyphicon glyphicon-usd pull-left"></i>
 					</div>
 					<div class="panel-body">
 						<p class="text-center">
@@ -99,18 +105,33 @@
 				</div>
 			</div>
 			
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-						<a href="{{route('staff_reports')}}"><h3 class="text-center">Reports</h3></a>
+						<a href="{{route('staff_reports')}}"><h3 class="text-center">Sales </h3></a>
+						<i class="glyphicon glyphicon-tasks pull-left"></i>
 					</div>
 					<div class="panel-body">
 						<p class="text-center">
-							<span class="badge">View</span>
+							<span class="badge">Reports</span>
 						</p>
 					</div>
 				</div>
 			</div>
+			<div class="col-md-6">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<a href="{{route('staff_inventory_report')}}"><h3 class="text-center">Inventory </h3></a>
+						<i class="glyphicon glyphicon-tasks pull-left"></i>
+					</div>
+					<div class="panel-body">
+						<p class="text-center">
+							<span class="badge">Reports</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
 		</div>
 		<div class="col-md-3 col-md-offset-1 well">
 			<h4 class="text-center" style="color: red;">Previous items sold</h4>

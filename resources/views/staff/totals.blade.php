@@ -81,6 +81,7 @@
 						{{Session::get('total_pay')}}
 					</div>
 				@endif
+				
 				<table class="table table-bordered row">
 					<thead>
 						<tr>
@@ -106,9 +107,7 @@
 				</table>
 				
 
-				<div class="col-md-4 col-md-offset-4">
-					<a href="{{route('staff_total_payment')}}" class="btn btn-danger btn-lg btn-block">Confirm</a>
-				</div>
+				
 			</div>	
 
 			<div class="col-md-4">
@@ -130,6 +129,12 @@
 				<div class="form-group">
 					<button type="button" class="btn btn-default btn-block" id="btnCalculate">CALCULATE</button>
 				</div>
+				<div class="form-group">
+					<a href="{{route('staff_total_payment')}}" class="btn btn-danger btn-block">Confirm Payment</a>
+				</div>
+				<button class="btn btn-info btn-xs" id="printMe">
+					<span class="glyphicon glyphicon-print">Receipt</span>
+				</button>
 			</div>		
 		</div>
 	</div>
@@ -146,6 +151,11 @@
 			
 			$("#totalChange").val(change);
 
+		});
+
+		$("#printMe").click(function(){
+
+			window.print();
 		});
 	});
 </script>

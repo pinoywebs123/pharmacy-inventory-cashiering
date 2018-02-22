@@ -77,23 +77,14 @@
 		
 		<div id="datacontent" class="row well">
 			<div class="col-md-12 row">
-				<h3 class="text-center">Sales Report</h3>
+				<h3 class="text-center">Inventory Report</h3>
 				<p class="pull-right">
 					<button id="printReport" class="btn btn-info btn-xs">
 						<span class="glyphicon glyphicon-print"></span>
 					</button>
 				</p>
 				<div class="row">
-					<form  method="GET">
-						<div class="form-group">
-							
-							<input type="date" name="start">
-							
-							<button type="submit" class="btn btn-info btn-xs">Search</button>
-							{{csrf_field()}}
-						</div>
-						
-					</form>
+					
 				</div>
 				
 				<table class="table table-bordered row">
@@ -103,20 +94,17 @@
 							<td>Name</td>
 							<td>Price</td>
 							<td>Quantity</td>
-							<td>Quantity Left</td>
-							<td>Quantity Sold</td>
+							<td>Delivery Date</td>
+							
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($items as $morls)
+						@foreach($inventory as $morls)
 							<tr>
-								<td>{{$morls->item($morls->item_id)->name}}</td>
-								<td>{{$morls->item($morls->item_id)->price}}</td>
-								<td>{{$morls->inventory($morls->item_id)->quantity}}</td>
-								<td>{{$morls->item($morls->item_id)->quantity}}</td>
+								<td>{{$morls->name}}</td>
+								<td>{{$morls->price}}</td>
 								<td>{{$morls->quantity}}</td>
-								
-								
+								<td>{{$morls->created_at->toDayDateTimeString()}}</td>
 							</tr>
 						@endforeach
 				</table>

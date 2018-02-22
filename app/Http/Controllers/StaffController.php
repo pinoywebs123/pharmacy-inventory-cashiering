@@ -146,6 +146,7 @@ class StaffController extends Controller
 
         $item = new Item;
         $item->category_id = $request['category'];
+        $item->inventory_id = $inventory->id;
         $item->name =  $request['product_name'];
         $item->quantity = $request['product_quantity'];
         $item->price = $request['product_price'];
@@ -154,6 +155,11 @@ class StaffController extends Controller
         $item->save();
 
         return redirect()->back()->with('add_ok', 'You have added new item successfully!');
+    }
+
+    public function staff_inventory_report(){
+        $inventory = Inventory::all();
+        return view('staff.inventory_report', compact('inventory'));
     }
 }
 
