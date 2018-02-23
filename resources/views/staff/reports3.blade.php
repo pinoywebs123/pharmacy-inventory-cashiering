@@ -87,9 +87,9 @@
 					
 				</div>
 				<ul class="nav nav-tabs row">
-				  <li role="presentation" class="active"><a href="{{route('staff_reports')}}">Drugs</a></li>
+				  <li role="presentation" ><a href="{{route('staff_reports')}}">Drugs</a></li>
 				  <li role="presentation"><a href="{{route('staff_reports2')}}">Milk</a></li>
-				  <li role="presentation"><a href="{{route('staff_reports3')}}">Cosmetic</a></li>
+				  <li role="presentation" class="active"><a href="{{route('staff_reports3')}}">Cosmetic</a></li>
 				 
 				 
 				</ul>
@@ -107,7 +107,7 @@
 					</thead>
 					<tbody>
 						@foreach($items as $morls)
-							@if($morls->black($morls->item_id)->category_id == 1  )
+							@if($morls->black($morls->item_id)->category_id == 3  )
 								<tr>
 								<td>{{$morls->item($morls->item_id)->name}}</td>
 								<td>{{$morls->item($morls->item_id)->price}}</td>

@@ -52,6 +52,14 @@ class StaffController extends Controller
         $items = Report::all();
     	return view('staff.reports', compact('items'));
     }
+     public function staff_reports2(){
+        $items = Report::all();
+        return view('staff.reports2', compact('items'));
+    }
+     public function staff_reports3(){
+        $items = Report::all();
+        return view('staff.reports3', compact('items'));
+    }
     // public function staff_new_inventory(Request $request, addinventory $check){
     //     $inventory = new Inventory;
     //     $inventory->item_code = $request['item_code']; 
@@ -158,8 +166,18 @@ class StaffController extends Controller
     }
 
     public function staff_inventory_report(){
-        $inventory = Inventory::all();
+        $inventory =  Report::all();
         return view('staff.inventory_report', compact('inventory'));
+    }
+
+    public function staff_inventory_report2(){
+        $inventory =  Report::all();
+        return view('staff.inventory_report2', compact('inventory'));
+    }
+
+    public function staff_inventory_report3(){
+        $inventory =  Report::all();
+        return view('staff.inventory_report3', compact('inventory'));
     }
 }
 

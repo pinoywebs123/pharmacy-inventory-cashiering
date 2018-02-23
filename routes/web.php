@@ -65,6 +65,16 @@ Route::group(['prefix'=> 'Personnel'], function(){
 		'uses'=> 'StaffController@staff_reports'
 	]);
 
+	Route::get('/Reports2', [
+		'as'=> 'staff_reports2',
+		'uses'=> 'StaffController@staff_reports2'
+	]);
+
+	Route::get('/Reports3', [
+		'as'=> 'staff_reports3',
+		'uses'=> 'StaffController@staff_reports3'
+	]);
+
 	Route::post('/new-products-added', [
 		'as'=> 'staff_new_product_check',
 		'uses'=> 'StaffController@staff_new_product_check'
@@ -108,5 +118,15 @@ Route::group(['prefix'=> 'Personnel'], function(){
 	Route::get('/Report-Inventory', [
 		'as'=> 'staff_inventory_report',
 		'uses'=> 'StaffController@staff_inventory_report'
+	]);
+
+	Route::get('/Report-Inventory2', [
+		'as'=> 'staff_inventory_report2',
+		'uses'=> 'StaffController@staff_inventory_report2'
+	]);
+
+	Route::get('/Report-Inventory3', [
+		'as'=> 'staff_inventory_report3',
+		'uses'=> 'StaffController@staff_inventory_report3'
 	]);
 });

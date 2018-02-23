@@ -13,4 +13,8 @@ class Report extends Model
     public function inventory($item_code){
     	return Inventory::where('id', $item_code)->first();
     }
+
+    public function black($item_code){
+    	return Item::where('id', $item_code)->first();
+    }
 }

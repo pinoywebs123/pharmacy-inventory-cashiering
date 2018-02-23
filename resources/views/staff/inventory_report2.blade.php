@@ -77,19 +77,16 @@
 		
 		<div id="datacontent" class="row well">
 			<div class="col-md-12 row">
-				<h3 class="text-center">Sales Report</h3>
+				<h3 class="text-center">Inventory Report</h3>
 				<p class="pull-right">
 					<button id="printReport" class="btn btn-info btn-xs">
 						<span class="glyphicon glyphicon-print"></span>
 					</button>
 				</p>
-				<div class="row">
-					
-				</div>
 				<ul class="nav nav-tabs row">
-				  <li role="presentation" class="active"><a href="{{route('staff_reports')}}">Drugs</a></li>
-				  <li role="presentation"><a href="{{route('staff_reports2')}}">Milk</a></li>
-				  <li role="presentation"><a href="{{route('staff_reports3')}}">Cosmetic</a></li>
+				  <li role="presentation" ><a href="{{route('staff_inventory_report')}}">Drugs</a></li>
+				  <li role="presentation" class="active"><a href="{{route('staff_inventory_report2')}}">Milk</a></li>
+				  <li role="presentation"><a href="{{route('staff_inventory_report3')}}">Cosmetic</a></li>
 				 
 				 
 				</ul>
@@ -103,11 +100,12 @@
 							<td>Quantity Left</td>
 							<td>Quantity Sold</td>
 							<td>Transaction Date</td>
+							
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($items as $morls)
-							@if($morls->black($morls->item_id)->category_id == 1  )
+						@foreach($inventory as $morls)
+							@if($morls->black($morls->item_id)->category_id == 2  )
 								<tr>
 								<td>{{$morls->item($morls->item_id)->name}}</td>
 								<td>{{$morls->item($morls->item_id)->price}}</td>
@@ -120,6 +118,8 @@
 							@endif
 							
 						@endforeach
+
+						
 				</table>
 			</div>
 			
